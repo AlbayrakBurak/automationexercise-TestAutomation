@@ -24,13 +24,14 @@ public class BaseLibrary extends Data{
 
     @Step("Şifre alanı boş kontrolü yapılır.")
     public void assertPasswordFieldIsEmpty(String actualPassword) {
-        Assert.assertTrue(actualPassword.isEmpty(), "Şifre alanı boş olmamalı.");
         screenshot();
+        Assert.assertTrue(actualPassword.isEmpty(), "Şifre alanı boş olmamalı.");
+
     }
     @Step("Email alanı doğrulama kontrolü.")
     public void assertEmailFieldVerify(String actualEmail) {
-        Assert.assertFalse(actualEmail.contains("@"), "Geçerli bir mail adresi olmalı.");
         screenshot();
+        Assert.assertFalse(actualEmail.contains("@"), "Geçerli bir mail adresi olmalı.");
     }
 
     public int randomNumber(int length){
