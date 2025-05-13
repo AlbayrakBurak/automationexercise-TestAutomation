@@ -11,6 +11,7 @@ public class BaseTest extends BaseLibrary{
     public static WelcomePage welcomePage =new WelcomePage();
     public static RegisterPage registerPage = new RegisterPage();
     public static LoginPage loginPage = new LoginPage();
+    public static ProductsPage productsPage = new ProductsPage();
 
 
 

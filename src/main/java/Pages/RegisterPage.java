@@ -91,6 +91,13 @@ public class RegisterPage extends BaseTest {
         return this;
     }
 
+    @Step("Register Hata mesajı alınır")
+    public String getRegisterErrorMessage(){
+        String errorText = webDriver.findElement(By.cssSelector("[style='color: red;']")).getText();
+        screenshot();
+        return errorText;
+    }
+
     public RegisterPage fillCountry(String text){
         WebElement countryDropdown = webDriver.findElement(By.cssSelector("[data-qa='country']"));
         Select select =new Select(countryDropdown);

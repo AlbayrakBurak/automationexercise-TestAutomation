@@ -25,12 +25,11 @@ public class LoginPage extends BaseTest {
         return this;
     }
 
-    @Step("Hata mesajı alınır")
-    public String getErrorMessage(){
+    @Step("Login Hata mesajı alınır")
+    public String getLoginErrorMessage(){
         String errorText = webDriver.findElement(By.cssSelector("[style='color: red;']")).getText();
         screenshot();
         return errorText;
     }
-
-
+    
 }

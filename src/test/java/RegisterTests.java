@@ -1,8 +1,6 @@
 import Base.BaseTest;
 import org.testng.annotations.Test;
 
-import java.util.Locale;
-
 public class RegisterTests extends BaseTest {
 
     @Test(description = "Kayıt işlemi - Başarılı")
@@ -45,5 +43,18 @@ public class RegisterTests extends BaseTest {
         String welcomeText = welcomePage.getWelcomeText();
         assertEqualsText(welcomeText.toLowerCase(), "Account Created!".toLowerCase());
         System.out.println(emailAddress);
+    }
+
+    @Test(description = "Kayıt işlemi - Başarısız zaten kayıtlı")
+    public void RegisterUnSuccessful() {
+        String userName = "test" + randomNumber(1000000);
+        String emailAddress = "test@gmail.com";
+        homePage.clickLoginOrRegister();
+        registerPage.fillUsername(userName)
+                .fillEmailAddress(emailAddress);
+        homePage.clickRegister();
+
+        String errorText = registerPage.getRegisterErrorMessage();
+        assertEqualsText(errorText.trim(), registerErrorMessage.trim());
     }
 }

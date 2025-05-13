@@ -1,6 +1,5 @@
 import Base.BaseTest;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTests extends BaseTest {
@@ -20,8 +19,8 @@ public class LoginTests extends BaseTest {
         loginPage.fillEmailAddress(emailAddress)
                 .fillPassword("aaa")
                 .clickLoginButton();
-        String errorText = loginPage.getErrorMessage();
-        assertEqualsText(errorText.trim(), errorMessage.trim());
+        String errorText = loginPage.getLoginErrorMessage();
+        assertEqualsText(errorText.trim(), loginErrorMessage.trim());
     }
 
     @Test(description = "Zorunlu şifre kontrolü - Şifre eksik")

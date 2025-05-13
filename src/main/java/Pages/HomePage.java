@@ -21,14 +21,12 @@ public class HomePage extends BaseTest {
     @Step("Add To Cart butonuna tıklanır")
     public HomePage clickAddToCart(String productId){
         webDriver.findElement(By.xpath("//a[@data-product-id='" + productId + "' and contains(@class, 'add-to-cart')]")).click();
-        screenshot();
         return this;
     }
 
     @Step("View Product butonuna tıklanır")
     public HomePage clickViewProduct(String productId){
         webDriver.findElement(By.cssSelector("[href='/product_details/"+productId+"']")).click();
-        screenshot();
         return this;
     }
 
@@ -38,5 +36,8 @@ public class HomePage extends BaseTest {
         screenshot();
         return this;
     }
+
+
+
 
 }
