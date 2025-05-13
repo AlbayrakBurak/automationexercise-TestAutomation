@@ -18,6 +18,11 @@ public class ProductTests extends BaseTest {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
         WebElement modalTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='modal-title w-100']")));
         String addToCartSuccessful = modalTitle.getText();
+        try {
+            Thread.sleep(1000); // 1 saniye bekle
+        } catch (InterruptedException e) {
+            e.printStackTrace(); // İstisna olursa logla
+        }
         assertEqualsText(addToCartSuccessful, addCartSuccess);
     }
 
