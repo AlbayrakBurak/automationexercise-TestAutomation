@@ -16,7 +16,7 @@ public class BaseTest extends BaseLibrary {
     public static LoginPage loginPage = new LoginPage();
     public static ProductsPage productsPage = new ProductsPage();
 
-    private final String browser = "edge"; // "firefox", "edge" de olabilir
+    private final String browser = "chrome"; // "firefox", "edge" de olabilir
 
     @BeforeMethod
     public void openBrowser() {
