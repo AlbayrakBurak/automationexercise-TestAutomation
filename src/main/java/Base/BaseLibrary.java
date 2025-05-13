@@ -35,7 +35,7 @@ public class BaseLibrary extends Data{
 
     public int randomNumber(int length){
         Random random = new Random();
-        return random.nextInt(length);
+        return random.nextInt(length-1)+1;
     }
 
     @Attachment(value = "Screenshot", type = "image/png")
