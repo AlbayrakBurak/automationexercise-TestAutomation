@@ -16,15 +16,20 @@ public class BaseLibrary extends Data{
         return webDriver.getCurrentUrl();
     }
 
-    @Step("Metin karşılaştırılması sağlanır")
+    @Step("İşlem/Metin doğrulaması yapılır ")
     public void assertEqualsText(String actual, String expected){
         Assert.assertEquals(actual,expected);
         screenshot();
     }
 
-    @Step("Şifre alanı boş kontrolü yapılır ve ekran görüntüsü alınır.")
+    @Step("Şifre alanı boş kontrolü yapılır.")
     public void assertPasswordFieldIsEmpty(String actualPassword) {
         Assert.assertTrue(actualPassword.isEmpty(), "Şifre alanı boş olmamalı.");
+        screenshot();
+    }
+    @Step("Email alanı doğrulama kontrolü.")
+    public void assertEmailFieldVerify(String actualEmail) {
+        Assert.assertFalse(actualEmail.contains("@"), "Geçerli bir mail adresi olmalı.");
         screenshot();
     }
 

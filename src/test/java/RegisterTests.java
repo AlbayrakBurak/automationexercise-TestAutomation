@@ -5,9 +5,8 @@ import java.util.Locale;
 
 public class RegisterTests extends BaseTest {
 
-    @Test(description = "Kayıt işlemi")
+    @Test(description = "Kayıt işlemi - Başarılı")
     public void RegisterSuccessful() {
-
         String userName = "test" + randomNumber(1000000);
         String emailAddress = userName+ "@gmail.com";
         String title = "Mr";
@@ -47,5 +46,4 @@ public class RegisterTests extends BaseTest {
         assertEqualsText(welcomeText.toLowerCase(), "Account Created!".toLowerCase());
         System.out.println(emailAddress);
     }
-
 }
