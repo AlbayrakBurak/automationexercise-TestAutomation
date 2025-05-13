@@ -45,7 +45,7 @@ public class RegisterTests extends BaseTest {
         System.out.println(emailAddress);
     }
 
-    @Test(description = "Kayıt işlemi - Başarısız zaten kayıtlı")
+    @Test(description = "Kayıt işlemi - Başarısız Mail zaten kayıtlı")
     public void RegisterUnSuccessful() {
         String userName = "test" + randomNumber(1000000);
         String emailAddress = "test@gmail.com";
@@ -53,7 +53,6 @@ public class RegisterTests extends BaseTest {
         registerPage.fillUsername(userName)
                 .fillEmailAddress(emailAddress);
         homePage.clickRegister();
-
         String errorText = registerPage.getRegisterErrorMessage();
         assertEqualsText(errorText.trim(), registerErrorMessage.trim());
     }

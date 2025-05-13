@@ -27,9 +27,8 @@ public class LoginTests extends BaseTest {
     public void LoginRequiredController() {
         homePage.clickLoginOrRegister();
         loginPage.fillEmailAddress(emailAddress);
-        String passwordValue = webDriver.findElement(By.cssSelector("[data-qa='login-password']")).getAttribute("value");
         loginPage.clickLoginButton();
-        assertPasswordFieldIsEmpty(passwordValue);
+        assertPasswordFieldIsEmpty(loginPage.verifyPassword());
     }
 
     @Test(description = "E-mail adres geçerliliği kontrolü - Mail geçersiz")
@@ -37,8 +36,7 @@ public class LoginTests extends BaseTest {
         homePage.clickLoginOrRegister();
         loginPage.fillEmailAddress(wrongEmailAddress);
         loginPage.fillPassword(password);
-        String emailValue = webDriver.findElement(By.cssSelector("[data-qa='login-email']")).getAttribute("value");
         loginPage.clickLoginButton();
-        assertEmailFieldVerify(emailValue);
+        assertEmailFieldVerify(loginPage.verifyEmailValue());
     }
 }

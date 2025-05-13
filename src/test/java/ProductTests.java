@@ -10,6 +10,7 @@ import java.time.Duration;
 
 public class ProductTests extends BaseTest {
 
+
     @Test(description = "Sepete ürün ekleme - Başarılı ")
     public void AddToCartSuccessful() {
         String randomProductId = String.valueOf(randomNumber(9));
@@ -17,9 +18,7 @@ public class ProductTests extends BaseTest {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
         WebElement modalTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='modal-title w-100']")));
         String addToCartSuccessful = modalTitle.getText();
-        //String addToCartSuccessful =webDriver.findElement(By.cssSelector("[class='modal-title w-100']")).getText();
         assertEqualsText(addToCartSuccessful, addCartSuccess);
-        webDriver.findElement(By.cssSelector("[class='btn btn-success close-modal btn-block']")).click();
     }
 
     @Test(description = "View Product - Başarılı")
@@ -47,9 +46,7 @@ public class ProductTests extends BaseTest {
                 .fillReview(reviewText);
         WebElement submitButton = webDriver.findElement(By.id("button-review"));
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", submitButton);
-
         //productsPage.clickSubmitReview();  ----- Reklama tıkladığı için kapatıldı
-
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".form-row:not(.hide)")));
         String successReviewMessage = productsPage.getSuccessReviewMessage();

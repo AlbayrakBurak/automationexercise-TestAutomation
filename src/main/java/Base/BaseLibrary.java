@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class BaseLibrary extends Data{
 
-    public static WebDriver webDriver ;
+    public static WebDriver webDriver;
 
     @Step("Url bilgisi alınır")
     public String getCurrentUrl(){

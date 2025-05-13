@@ -18,6 +18,17 @@ public class LoginPage extends BaseTest {
         return this;
     }
 
+    @Step("Password alanı boş mu kontrol edilir")
+    public String verifyPassword(){
+        String passwordVerify = webDriver.findElement(By.cssSelector("[data-qa='login-password']")).getAttribute("value");
+        return passwordVerify;
+    }
+
+    @Step("Password alanı boş mu kontrol edilir")
+    public String verifyEmailValue(){
+        String emailValue = webDriver.findElement(By.cssSelector("[data-qa='login-email']")).getAttribute("value");
+        return emailValue;
+    }
 
     @Step("Login butonuna tıklanır")
     public LoginPage clickLoginButton(){
