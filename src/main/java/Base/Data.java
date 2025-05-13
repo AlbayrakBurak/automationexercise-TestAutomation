@@ -10,6 +10,8 @@ public class Data {
     public String loginErrorMessage ="Your email or password is incorrect!";
     public String registerErrorMessage="Email Address already exist!";
     public String addCartSuccess = "Added!";
+    public String reviewText="Bu bir Test yorumudur. Eğitim gayet başarılı geçti. Case çalışması olarak sunulabilir bir proje yapıldı.";
+
 
 
 }

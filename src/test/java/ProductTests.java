@@ -40,25 +40,18 @@ public class ProductTests extends BaseTest {
 
     @Test(description = "Review Product - Başarılı")
     public void ReviewProductSuccessful() {
-
         String randomProductId = String.valueOf(randomNumber(9));
         homePage.clickViewProduct(randomProductId);
         productsPage.fillYourName(name)
                 .fillEmailAddress(emailAddress)
-                .fillReview("Bu bir Test yorumudur...");
+                .fillReview(reviewText);
         WebElement submitButton = webDriver.findElement(By.id("button-review"));
-        ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView(true);", submitButton);
-        // Kısa bekleme (scroll sonrası)
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        productsPage.clickSubmitReview();
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", submitButton);
+
+        //productsPage.clickSubmitReview();  ----- Reklama tıkladığı için kapatıldı
+
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
-        WebElement successAlert = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.cssSelector(".form-row:not(.hide)")
-        ));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".form-row:not(.hide)")));
         String successReviewMessage = productsPage.getSuccessReviewMessage();
         assertEqualsText(successReviewMessage, "Thank you for your review.");
     }
