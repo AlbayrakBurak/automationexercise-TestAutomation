@@ -35,8 +35,10 @@ Testler Allure Report ile raporlanmıştır. Raporu görüntülemek için:
 - Detaylar için "allure-reports" klasörünü inceleyebilirsiniz.
 
 ![image](https://github.com/user-attachments/assets/eb70c22e-d14a-4a06-8433-886698a6bd4d)
-![image](https://github.com/user-attachments/assets/8a5eea70-870f-4f22-b6f5-886a641181ca)
-![image](https://github.com/user-attachments/assets/095b2aa5-9733-4623-937d-d093b41ca259)
+![image](https://github.com/user-attachments/assets/aa80fef4-0b47-4238-bbd4-dc1cedeb598a)
+![image](https://github.com/user-attachments/assets/fe8b03fb-8a1e-42d2-92aa-bbf9bdd00028)
+![image](https://github.com/user-attachments/assets/46908c2e-ba79-4a39-93d5-67f3c0be5a3f)
+
 
 
 
