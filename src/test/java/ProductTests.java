@@ -15,7 +15,7 @@ public class ProductTests extends BaseTest {
 
     @Test(description = "View Product - Başarılı")
     public void ViewProductSuccessful() {
-        String randomProductId = String.valueOf(randomNumber(20));
+        String randomProductId = String.valueOf(randomNumber(9));
         homePage.clickViewProduct(randomProductId);
         String expectedUrl = "https://www.automationexercise.com/product_details/" + randomProductId;
         assertEqualsText(getCurrentUrl(),expectedUrl);
@@ -23,7 +23,7 @@ public class ProductTests extends BaseTest {
 
     @Test(description = "Brands - Başarılı")
     public void SelectBrands() {
-        String brand = "POLO";
+        String brand = "Polo";
         homePage.clickBrands(brand);
         String expectedUrl = "https://www.https://www.automationexercise.com/brand_products/" + brand;
         assertEqualsText(getCurrentUrl(),expectedUrl);

@@ -32,7 +32,7 @@ public class HomePage extends BaseTest {
         return this;
     }
 
-    @Step("View Product butonuna tıklanır")
+    @Step("Brand seçilir")
     public HomePage clickBrands(String brand){
         webDriver.findElement(By.cssSelector("[href='/brand_products/"+brand+"']")).click();
         screenshot();
