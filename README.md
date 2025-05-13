@@ -34,5 +34,5 @@ Aşağıdaki test senaryoları tarayıcı bağımsız olarak çalıştırılmı�
 
 Testler Allure Report ile raporlanmıştır. Raporu görüntülemek için: 
 - CMD dosya dizinine gidip "allure serve" demeniz yeterli olacaktır. 
-- Detaylar için "allure results" klasörünü inceleyebilirsiniz.
+- Detaylar için "allure-reports" klasörünü inceleyebilirsiniz.
 
