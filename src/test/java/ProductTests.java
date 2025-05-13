@@ -6,7 +6,7 @@ public class ProductTests extends BaseTest {
 
     @Test(description = "Sepete ürün ekleme - Başarılı ")
     public void AddToCartSuccessful() {
-        String randomProductId = String.valueOf(randomNumber(20));
+        String randomProductId = String.valueOf(randomNumber(9));
         homePage.clickAddToCart(randomProductId);
         String addToCartSuccessful =webDriver.findElement(By.cssSelector("[class='modal-title w-100']")).getText();
         assertEqualsText(addToCartSuccessful,addCartSuccess);
@@ -25,7 +25,7 @@ public class ProductTests extends BaseTest {
     public void SelectBrands() {
         String brand = "Polo";
         homePage.clickBrands(brand);
-        String expectedUrl = "https://www.https://www.automationexercise.com/brand_products/" + brand;
+        String expectedUrl = "https://www.automationexercise.com/brand_products/" + brand;
         assertEqualsText(getCurrentUrl(),expectedUrl);
     }
 }
