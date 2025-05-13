@@ -33,5 +33,6 @@ Aşağıdaki test senaryoları tarayıcı bağımsız olarak çalıştırılmı�
 - Marka filtreleme
 
 Testler Allure Report ile raporlanmıştır. Raporu görüntülemek için: 
-- CMD dosya dizinine gidip "allure serve" demeniz yeterli olacaktır.
+- CMD dosya dizinine gidip "allure serve" demeniz yeterli olacaktır. 
+- Detaylar için "allure results" klasörünü inceleyebilirsiniz.
 
